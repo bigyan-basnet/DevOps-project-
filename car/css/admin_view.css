@@ -1,0 +1,336 @@
+/* Add some basic styles to improve readability */
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* CSS for Navbar */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, Arial, sans-serif;
+
+  color: var(--white);
+}
+
+header {
+  background-color: transparent;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-menu-group .navbar-logo {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.first-menu-group .navbar-logo .rental {
+  color: #ff7f50;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.middle-menu-group {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav_links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+}
+
+.nav-item {
+  margin: 0 10px;
+  color: white;
+}
+
+
+.nav-item.active .nav-link {
+  color: #ff7f50;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff7f50;
+}
+
+.last-menu-group {
+  display: flex;
+  align-items: center;
+}
+
+.login_div {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  margin-right: 10px;
+  color: #f8f9fa;
+}
+
+.last-menu-group .nav-item {
+  margin: 0 10px;
+}
+
+.last-menu-group .nav-link {
+  color: white;
+}
+
+.main-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/admin_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  z-index: -1;
+}
+
+.text-container {
+  text-align: center;
+}
+
+.text-container h1 {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.text-container p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.menu-logo {
+  display: none;
+}
+
+/* style for section */
+
+section{
+  background: rgb(2, 0, 36);
+  background: linear-gradient(7deg, rgba(2, 0, 36, 1) 0%, rgba(9, 43, 121, 0.726015406162465) 35%, rgba(0, 212, 255, 1) 100%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 800px;
+  max-height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgb(2, 0, 36);
+    background: linear-gradient(7deg, rgba(2, 0, 36, 1) 0%, rgba(9, 43, 121, 0.726015406162465) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+.upper-div {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.upper-div h2{
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  color: var(--yellow);
+}
+
+.upper-div p {
+  margin-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(229, 223, 223);
+
+}
+
+.lower-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-div {
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow: #343a40;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.action-div h3 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: rgb(13, 237, 13);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--yellow);
+}
+
+
+
+
+.container2{
+  max-width: 800px;
+  max-height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(7deg, rgba(2, 0, 36, 1) 0%, rgba(9, 43, 121, 0.726015406162465) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+.second-div {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+/* Responsive Menu */
+@media only screen and (max-width: 768px) {
+
+  * {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .middle-menu-group {
+    display: none;
+  }
+
+  .last-menu-group {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .nav-item {
+    margin: 10px;
+    opacity: 1;
+  }
+
+  .menu-logo {
+    display: flex;
+    width: 15px;
+    height: 15x;
+    opacity: 1;
+    background-color: auto;
+  }
+
+  .nav_links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    padding: 10px 20px;
+    opacity: 1;
+  }
+
+  .text-container h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    opacity: 1;
+  }
+
+  .text-container p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    opacity: 1;
+  }
+
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/admin_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    z-index: -1;
+
+  }
+
+}
+
+
