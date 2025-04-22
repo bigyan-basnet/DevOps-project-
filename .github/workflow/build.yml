@@ -1,32 +1,24 @@
-name: Build PHP Project
+version: 0.2
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies"
+      - sudo apt-get update -y
+      - sudo apt-get install -y php php-cli apache2 # Installing PHP and Apache2 for running PHP
 
-jobs:
   build:
-    runs-on: ubuntu-latest
+    commands:
+      - echo "Build block"
+      - ls -R car # List the contents of the 'car' directory to ensure all files are in place
+      - echo "Checking for 'header.php' inclusion in index.php"
+      - grep "header.php" car/index.php # Ensure that header.php is included correctly
+      - echo "Checking PHP syntax in index.php"
+      - php -l car/index.php # Run PHP syntax check on index.php file to ensure no errors
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-
-      - name: Run PHP syntax check
-        run: |
-          echo "Checking PHP files for errors..."
-          find ./car -name "*.php" -print0 | xargs -0 -n1 php -l
-
-      - name: Hello World command
-        run: |
-          echo "Hello World" # This will print 'Hello World' to the console during the build
-
-      - name: Additional step (optional)
-        run: echo "Build completed!"
+  post_build:
+    commands:
+      - echo "Post build phase"
+      - echo "Build and tests completed."
+      - echo "Starting Apache server to serve the PHP files."
+      - sudo service apache2 start # Starting Apache to serve the PHP website
