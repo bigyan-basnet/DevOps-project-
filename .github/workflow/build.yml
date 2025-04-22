@@ -11,13 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2'
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
 
-    - name: Check PHP files for errors
-      run: find ./car -name "*.php" -print0 | xargs -0 -n1 php -l
+      - name: Run PHP syntax check
+        run: |
+          echo "Checking PHP files for errors..."
+          find ./car -name "*.php" -print0 | xargs -0 -n1 php -l
+
+      - name: Hello World command
+        run: |
+          echo "Hello World" # This will print 'Hello World' to the console during the build
+
+      - name: Additional step (optional)
+        run: echo "Build completed!"
