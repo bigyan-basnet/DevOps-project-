@@ -1,0 +1,9 @@
+branch-defaults:
+  default:
+    environment: DevOps-webapp-env1
+global:
+  application_name: DevOps-webapp
+  default_region: ap-southeast-2
+  profile: null
+  solution_stack: 64bit Amazon Linux 2 v3.3.6 running PHP 8.0
+  workspace_type: Application
