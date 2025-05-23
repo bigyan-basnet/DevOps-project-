@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 8.1
+    commands:
+      - composer install
+  build:
+    commands:
+      - zip -r app.zip . -x "*.git*" "tests/*" "scripts/*"
+  post_build:
+    commands:
+      - aws s3 cp app.zip s3://your-s3-bucket-name/car-build/app.zip
+artifacts:
+  files:
+    - app.zip
